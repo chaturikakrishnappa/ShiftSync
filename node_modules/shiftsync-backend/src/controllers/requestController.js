@@ -14,7 +14,7 @@ const createSwap = asyncHandler(async (req, res) => {
     fromUserId: req.user.id,
     toUserId
   });
-  res.json(reqDoc);
+  res.status(201).json(reqDoc);
 });
 
 const respondSwap = asyncHandler(async (req, res) => {
@@ -52,7 +52,7 @@ const createLeave = asyncHandler(async (req, res) => {
     endDate,
     reason
   });
-  res.json(doc);
+  res.status(201).json(doc);
 });
 
 const approveLeave = asyncHandler(async (req, res) => {

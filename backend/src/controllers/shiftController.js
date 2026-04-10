@@ -24,7 +24,7 @@ const createShift = asyncHandler(async (req, res) => {
     status: 'draft',
     weekId: getWeekId(shiftDate)
   });
-  res.json(shift);
+  res.status(201).json(shift);
 });
 
 const listWeek = asyncHandler(async (req, res) => {
@@ -61,7 +61,7 @@ const assignShift = asyncHandler(async (req, res) => {
     startTime: shift.startTime,
     endTime: shift.endTime
   });
-  res.json(assignment);
+  res.status(201).json(assignment);
 });
 
 const autoSchedule = asyncHandler(async (req, res) => {

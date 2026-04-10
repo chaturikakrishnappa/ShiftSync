@@ -20,7 +20,7 @@ const clockIn = asyncHandler(async (req, res) => {
     clockInTime: new Date(),
     late
   });
-  res.json(rec);
+  res.status(201).json(rec);
 });
 
 const clockOut = asyncHandler(async (req, res) => {

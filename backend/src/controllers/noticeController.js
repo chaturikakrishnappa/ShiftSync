@@ -9,7 +9,7 @@ const create = asyncHandler(async (req, res) => {
     message,
     postedBy: req.user.id
   });
-  res.json(doc);
+  res.status(201).json(doc);
 });
 
 const list = asyncHandler(async (req, res) => {

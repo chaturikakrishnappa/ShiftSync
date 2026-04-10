@@ -44,7 +44,7 @@ const registerManager = asyncHandler(async (req, res) => {
     const access = signAccessToken({ sub: manager[0]._id, role: 'manager' });
     const refresh = signRefreshToken({ sub: manager[0]._id });
     setRefreshCookie(res, refresh);
-    res.json({
+    res.status(201).json({
       accessToken: access,
       user: { id: manager[0]._id, role: 'manager', name, email, businessId }
     });
