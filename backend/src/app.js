@@ -14,6 +14,11 @@ const healthRoutes = require('./routes/health');
 
 const app = express();
 
+// Enable trust proxy for secure cookies on Render/Heroku
+if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1);
+}
+
 // 1. ENVIRONMENT & ORIGIN SETUP
 const isProd = process.env.NODE_ENV === 'production';
 const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS 
